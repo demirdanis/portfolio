@@ -35,37 +35,87 @@ function useLearnedPhrases() {
   return { learned, toggle };
 }
 
+// Chrome Android does not fire onboundary; this builds a timer-based word fallback.
+function buildWordFallback(
+  text: string,
+  boundaryFired: { current: boolean },
+  fallbackTimer: { current: ReturnType<typeof setTimeout> | null },
+  rateRef: React.MutableRefObject<number>,
+  setHighlight: (h: { text: string; charIndex: number; charLength: number } | null) => void,
+) {
+  const tokens = text.split(/(\s+)/);
+  let charPos = 0;
+  let tokenIdx = 0;
+
+  function next() {
+    if (boundaryFired.current) return;
+    while (tokenIdx < tokens.length && /^\s*$/.test(tokens[tokenIdx])) {
+      charPos += tokens[tokenIdx].length;
+      tokenIdx++;
+    }
+    if (tokenIdx >= tokens.length) return;
+    const word = tokens[tokenIdx];
+    setHighlight({ text, charIndex: charPos, charLength: word.length });
+    charPos += word.length;
+    tokenIdx++;
+    const ms = Math.max(180, word.length * 65) / rateRef.current;
+    fallbackTimer.current = setTimeout(next, ms);
+  }
+  return next;
+}
+
 function useTTS(rate: number) {
   const [speaking, setSpeaking] = useState<string | null>(null);
   const [highlight, setHighlight] = useState<{ text: string; charIndex: number; charLength: number } | null>(null);
   const rateRef = useRef(rate);
+  const fallbackTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   useEffect(() => { rateRef.current = rate; }, [rate]);
+
+  const clearFallback = useCallback(() => {
+    if (fallbackTimer.current !== null) {
+      clearTimeout(fallbackTimer.current);
+      fallbackTimer.current = null;
+    }
+  }, []);
 
   const stop = useCallback(() => {
     window.speechSynthesis?.cancel();
+    clearFallback();
     setSpeaking(null);
     setHighlight(null);
-  }, []);
+  }, [clearFallback]);
 
   const speak = useCallback((text: string, key: string) => {
     if (!window.speechSynthesis) return;
     window.speechSynthesis.cancel();
+    clearFallback();
     if (speaking === key) { setSpeaking(null); setHighlight(null); return; }
+    const boundaryFired = { current: false };
     const utter = new SpeechSynthesisUtterance(text);
     utter.lang = "en-US";
     utter.rate = rateRef.current;
-    utter.onboundary = (e) => {
-      if (e.name === "word") setHighlight({ text, charIndex: e.charIndex, charLength: e.charLength ?? 0 });
+    const runFallback = buildWordFallback(text, boundaryFired, fallbackTimer, rateRef, setHighlight);
+    utter.onstart = () => {
+      fallbackTimer.current = setTimeout(() => {
+        if (!boundaryFired.current) runFallback();
+      }, 250);
     };
-    utter.onend = () => { setSpeaking(null); setHighlight(null); };
-    utter.onerror = () => { setSpeaking(null); setHighlight(null); };
+    utter.onboundary = (e) => {
+      if (e.name === "word") {
+        if (!boundaryFired.current) { boundaryFired.current = true; clearFallback(); }
+        setHighlight({ text, charIndex: e.charIndex, charLength: e.charLength ?? 0 });
+      }
+    };
+    utter.onend = () => { clearFallback(); setSpeaking(null); setHighlight(null); };
+    utter.onerror = () => { clearFallback(); setSpeaking(null); setHighlight(null); };
     setSpeaking(key);
     window.speechSynthesis.speak(utter);
-  }, [speaking]);
+  }, [speaking, clearFallback]);
 
   const speakAll = useCallback((texts: string[], key: string) => {
     if (!window.speechSynthesis) return;
     window.speechSynthesis.cancel();
+    clearFallback();
     if (speaking === key) { setSpeaking(null); setHighlight(null); return; }
 
     let index = 0;
@@ -74,19 +124,29 @@ function useTTS(rate: number) {
     function speakNext() {
       if (index >= texts.length) { setSpeaking(null); setHighlight(null); return; }
       const text = texts[index];
+      const boundaryFired = { current: false };
       const utter = new SpeechSynthesisUtterance(text);
       utter.lang = "en-US";
       utter.rate = rateRef.current;
-      utter.onboundary = (e) => {
-        if (e.name === "word") setHighlight({ text, charIndex: e.charIndex, charLength: e.charLength ?? 0 });
+      const runFallback = buildWordFallback(text, boundaryFired, fallbackTimer, rateRef, setHighlight);
+      utter.onstart = () => {
+        fallbackTimer.current = setTimeout(() => {
+          if (!boundaryFired.current) runFallback();
+        }, 250);
       };
-      utter.onend = () => { index++; speakNext(); };
-      utter.onerror = () => { setSpeaking(null); setHighlight(null); };
+      utter.onboundary = (e) => {
+        if (e.name === "word") {
+          if (!boundaryFired.current) { boundaryFired.current = true; clearFallback(); }
+          setHighlight({ text, charIndex: e.charIndex, charLength: e.charLength ?? 0 });
+        }
+      };
+      utter.onend = () => { clearFallback(); index++; speakNext(); };
+      utter.onerror = () => { clearFallback(); setSpeaking(null); setHighlight(null); };
       window.speechSynthesis.speak(utter);
     }
 
     speakNext();
-  }, [speaking]);
+  }, [speaking, clearFallback]);
 
   return { speaking, speak, speakAll, stop, highlight };
 }
