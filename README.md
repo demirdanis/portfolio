@@ -10,5 +10,5 @@ npm run dev
 
 ```bash
 DEPLOY_TARGET=gh-pages NEXT_PUBLIC_BASE_PATH="" npm run predeploy
-DEPLOY_TARGET=gh-pages NEXT_PUBLIC_BASE_PATH="" npm run deploy
+DEPLOY_TARGET=gh-pages NEXT_PUBLIC_BASE_PATH="" npm run deploy 
 ```
