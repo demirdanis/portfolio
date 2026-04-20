@@ -221,23 +221,7 @@ const portfolioService = {
       },
     ],
     projects: [
-      {
-        id: 1,
-        title: "Nesy (Aras Kargo)",
-        category: "Enterprise Platform",
-        description:
-          "Enterprise logistics platform with microservices architecture serving millions of users.",
-        image: (process.env.NEXT_PUBLIC_BASE_PATH || "") + "/img/nesy.webp",
-        technologies: [
-          "Angular",
-          "PrimeNG",
-          "Ionic",
-          ".NET",
-          "Kafka",
-          "MongoDB",
-        ],
-        link: null,
-      },
+     
       {
         id: 2,
         title: "villasepeti.com",
@@ -256,7 +240,41 @@ const portfolioService = {
         ],
         link: "https://villasepeti.com",
       },
+
+      
+    
       {
+        id: 4,
+        title: "Enuygun Finans",
+        category: "Fintech",
+        description:
+          "Credit and loan management system for Turkey's leading travel platform.",
+        image: (process.env.NEXT_PUBLIC_BASE_PATH || "") + "/img/enuygun.webp",
+        technologies: ["React", "Next.js", "Strapi", "GraphQL"],
+        link: "https://www.enuygunfinans.com/kredi",
+      },
+
+      {
+        id: 9,
+        title: "dod.com.tr",
+        category: "Web Application",
+        description:
+          "dod.com.tr developed with Vue.js and Ant Design, documented with Storybook.",
+        image: (process.env.NEXT_PUBLIC_BASE_PATH || "") + "/img/dod.webp",
+        technologies: ["Vue.js", "Ant Design", "Storybook"],
+        link: "https://dod.com.tr/",
+      },
+      {
+        id: 10,
+        title: "Sensat Component Library",
+        category: "Web Application",
+        description:
+          "sensat.com developed with Vue.js and Ant Design, documented with Storybook.",
+        image: (process.env.NEXT_PUBLIC_BASE_PATH || "") + "/img/sensat.webp",
+        technologies: ["Vue.js", "Ant Design", "Storybook"],
+        link: "https://sensat.com/",
+      },
+        {
         id: 3,
         title: "TomorrowID",
         category: "AI/ML",
@@ -273,16 +291,41 @@ const portfolioService = {
         ],
         link: null,
       },
-      {
-        id: 4,
-        title: "Enuygun Finans",
-        category: "Fintech",
+
+       {
+        id: 1,
+        title: "Onlayer",
+        category: "Website and Application",
         description:
-          "Credit and loan management system for Turkey's leading travel platform.",
-        image: (process.env.NEXT_PUBLIC_BASE_PATH || "") + "/img/enuygun.webp",
-        technologies: ["React", "Next.js", "Strapi", "GraphQL"],
-        link: "https://www.enuygunfinans.com/kredi",
+          "Business Risk & Performance Management",
+        image: (process.env.NEXT_PUBLIC_BASE_PATH || "") + "/img/onlayer.webp",
+        technologies: [
+          "Next.js",
+          "ShadcnUI",         
+          "Directus CMS",         
+        "GraphQL",
+        "Docker"
+        ],
+        link: null,
       },
+       {
+        id: 1,
+        title: "Nesy (Aras Kargo)",
+        category: "Enterprise Platform",
+        description:
+          "Enterprise logistics platform with microservices architecture serving millions of users.",
+        image: (process.env.NEXT_PUBLIC_BASE_PATH || "") + "/img/nesy.webp",
+        technologies: [
+          "Angular",
+          "PrimeNG",
+          "Ionic",
+          ".NET",
+          "Kafka",
+          "MongoDB",
+        ],
+        link: null,
+      },
+
       {
         id: 5,
         title: "KocSistem Web Application",
@@ -293,26 +336,7 @@ const portfolioService = {
         technologies: ["RemixJS", "Decap CMS", "PostgreSQL"],
         link: "https://www.kocsistem.com.tr/",
       },
-      {
-        id: 9,
-        title: "DOD Component Library",
-        category: "Component Library",
-        description:
-          "A component library for dod.com.tr developed with Vue.js and Ant Design, documented with Storybook.",
-        image: (process.env.NEXT_PUBLIC_BASE_PATH || "") + "/img/dod.webp",
-        technologies: ["Vue.js", "Ant Design", "Storybook"],
-        link: "https://dod.com.tr/",
-      },
-      {
-        id: 10,
-        title: "Sensat Component Library",
-        category: "Component Library",
-        description:
-          "A component library for sensat.com developed with Vue.js and Ant Design, documented with Storybook.",
-        image: (process.env.NEXT_PUBLIC_BASE_PATH || "") + "/img/sensat.webp",
-        technologies: ["Vue.js", "Ant Design", "Storybook"],
-        link: "https://sensat.com/",
-      },
+      
       {
         id: 11,
         title: "Kordon Madya",

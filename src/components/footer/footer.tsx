@@ -1,7 +1,17 @@
 import { IconGithub, IconLinkedin, IconMail } from "../icons/tailwind-icons";
 
 import type { FooterProps } from "./footer.types";
+import Link from "next/link";
 import React from "react";
+
+const NAV_LINKS = [
+  { label: "Home", href: "/#home" },
+  { label: "About", href: "/#about" },
+  { label: "Resume", href: "/#resume" },
+  { label: "Portfolio", href: "/#portfolio" },
+  { label: "Blog", href: "/#blog" },
+  { label: "English Practice", href: "/english-practice" },
+];
 
 export default function Footer({
   personal,
@@ -18,9 +28,20 @@ export default function Footer({
               className="h-12"
             />
           </div>
-          <p className="text-gray-400 mb-6">
+          <p className="text-gray-400 mb-4">
             Building exceptional digital experiences with modern technologies
           </p>
+          <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 mb-6">
+            {NAV_LINKS.map((link) => (
+              <Link
+                key={link.label}
+                href={link.href}
+                className="text-gray-400 hover:text-white text-sm transition-colors"
+              >
+                {link.label}
+              </Link>
+            ))}
+          </div>
           <div className="flex justify-center space-x-6 mb-6">
             {socialMedia.map((social, index) => (
               <a
