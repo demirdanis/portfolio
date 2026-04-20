@@ -11,7 +11,7 @@ const SectionTitle: React.FC<SectionTitleProps> = ({
   subtitle,
   centered = true,
 }) => (
-  <div className={`mb-12 ${centered ? "text-center" : ""}`}>
+  <div className={`mb-4 lg:mb-12 ${centered ? "text-center" : ""}`}>
     <h2 className="text-4xl lg:text-5xl font-bold text-white mb-4">
       {children}
     </h2>

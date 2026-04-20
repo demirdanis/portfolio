@@ -4,7 +4,7 @@ import SectionTitle from "../ui/section-title";
 import type { ServicesSectionProps } from "./services-section.types";
 
 const ServicesSection: React.FC<ServicesSectionProps> = ({ services }) => (
-  <section id="services" className="py-20 bg-gray-800/20">
+  <section id="services" className="py-8 lg:py-16 bg-gray-800/20">
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <SectionTitle subtitle="My core technical and leadership strengths">
         Featured Skills

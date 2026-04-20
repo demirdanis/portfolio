@@ -16,7 +16,7 @@ export interface PersonalInfo {
 
 export interface Skill {
   name: string;
-  percentage: number;
+  category: string;
 }
 
 export interface AboutSectionProps {

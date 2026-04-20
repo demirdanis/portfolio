@@ -8,11 +8,10 @@ import React from "react";
 const HeroSection: React.FC<HeroSectionProps> = ({
   personal,
   socialMedia,
-  stats,
 }) => (
   <section
     id="home"
-    className="min-h-screen flex items-center relative overflow-hidden pt-32 lg:pt-24 lg:-mt-24"
+    className="lg:h-screen  lg:h-[700px] lg:max-h-[700px] flex items-center relative overflow-hidden pt-24 pb-8 lg:pt-32 lg:pt-24 lg:-mt-24"
   >
     <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-gray-900 to-blue-900/20"></div>
     <div className="absolute inset-0 opacity-20">
@@ -21,7 +20,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
       <div className="absolute top-1/2 left-1/2 w-40 h-40 bg-pink-500 rounded-full blur-3xl animate-pulse delay-500"></div>
     </div>
     <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <div className="grid grid-cols-1 lg:grid-cols-2 lg:gap-12 items-center">
         {/* Mobilde foto üstte */}
         <div className="block lg:hidden mb-8">
           <div className="flex justify-center">
@@ -46,6 +45,8 @@ const HeroSection: React.FC<HeroSectionProps> = ({
         </div>
         <div className="space-y-4">
           <div>
+            {/* Availability badge */}
+           
             <p className="text-blue-400 text-lg font-medium mb-1 mt-0">
               Hello, I&apos;m
             </p>
@@ -62,7 +63,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
               {personal.bio}
             </p>
           </div>
-          <div className="flex flex-col sm:flex-row gap-4">
+          <div className="flex flex-col items-center sm:flex-row gap-4">
             <a
               href={
                 (process.env.NEXT_PUBLIC_BASE_PATH || "") +
@@ -73,19 +74,18 @@ const HeroSection: React.FC<HeroSectionProps> = ({
               rel="noopener noreferrer"
               className="w-full sm:w-auto"
             >
-              <Button size="lg" className="group w-full">
+              <Button size="lg" className="group w-full h-12">
                 Download CV
               </Button>
             </a>
-          </div>
-          <div className="flex space-x-6">
-            {socialMedia.map((social, index) => (
+            <div className="flex gap-2">
+    {socialMedia.map((social, index) => (
               <a
                 key={index}
                 href={social.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-12 h-12 bg-gray-800/50 hover:bg-gray-700 rounded-xl flex items-center justify-center transition-all duration-300 hover:scale-110"
+                className=" w-12 h-12 bg-gray-800/50 hover:bg-gray-700 rounded-xl flex items-center justify-center transition-all duration-300 hover:scale-110"
               >
                 {social.icon === "linkedin" && (
                   <IconLinkedin
@@ -106,7 +106,10 @@ const HeroSection: React.FC<HeroSectionProps> = ({
                 )}
               </a>
             ))}
+            </div>
+         
           </div>
+         
         </div>
         {/* Sadece desktopta sağda büyük foto */}
         <div className="hidden lg:flex justify-center lg:justify-end">
@@ -128,16 +131,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
           </div>
         </div>
       </div>
-      <div className="mt-20 grid grid-cols-1 sm:grid-cols-3 gap-8 max-w-2xl mx-auto mb-12 lg:-mb-48">
-        {stats.map((stat, index) => (
-          <div key={index} className="text-center">
-            <div className="text-3xl lg:text-4xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent mb-2">
-              {stat.number}
-            </div>
-            <p className="text-gray-400">{stat.label}</p>
-          </div>
-        ))}
-      </div>
+    
     </div>
   </section>
 );

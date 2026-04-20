@@ -10,6 +10,24 @@ import { Skill } from "../components/about-section/about-section.types";
 import { SocialMediaItem } from "../components/hero-section/hero-section.types";
 import { Stat } from "../components/hero-section/hero-section.types";
 
+export interface BlogSection {
+  type: "heading" | "paragraph" | "list" | "code";
+  content: string | string[];
+}
+
+export interface BlogPost {
+  id: number;
+  slug: string;
+  title: string;
+  shortDesc: string;
+  coverImage: string;
+  tags: string[];
+  date: string;
+  readTime: string;
+  author: string;
+  sections: BlogSection[];
+}
+
 export interface PortfolioData {
   personal: PersonalInfo;
   navigation: string[];
@@ -20,4 +38,5 @@ export interface PortfolioData {
   education: Education[];
   projects: Project[];
   stats: Stat[];
+  blogs: BlogPost[];
 }

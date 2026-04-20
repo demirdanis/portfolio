@@ -1,4 +1,5 @@
 // src/service/portfolio.service.ts
+import type { BlogPost } from "../types/portfolio-data.types";
 
 const portfolioService = {
   getPortfolioData: () => ({
@@ -13,13 +14,13 @@ const portfolioService = {
       email: "danis.demir@gmail.com",
       linkedin: "https://www.linkedin.com/in/demir-danis/",
       github: "https://github.com/demirdanis",
-      bio: "Seasoned software engineering manager with expertise in frontend and backend development, as well as team leadership. I have developed expertise in Progressive Web Apps and actively apply micro frontend methodologies.",
+      bio: "Full-stack software architect & engineering manager with 15+ years delivering scalable systems. I lead high-performing teams and actively integrate AI-augmented workflows — from AI-assisted code review to LLM-driven architecture decisions — to ship faster without sacrificing quality.",
       longBio:
-        "I strongly believe in fostering a culture of communication and collaboration both within teams and across departments. In my teams, I value not only technical proficiency but also communication skills and personal character. I aim to create an environment where technical and interpersonal skills are equally prioritized.",
+        "With over 15 years of hands-on experience spanning the full software lifecycle, I architect and deliver complex, high-scale systems from the ground up — bridging React, Next.js, and Angular frontends with robust NestJS, .NET, and cloud-native backends. As an Engineering Manager, I build and grow cross-functional teams where technical rigour and human development are treated as equally strategic priorities. I cultivate environments built on psychological safety, clear ownership, and a culture of continuous improvement. A core part of my leadership philosophy is the deliberate integration of AI across every phase of the SDLC: leveraging GitHub Copilot and LLMs to accelerate development cycles, automating code review and documentation pipelines, and applying AI-driven forecasting to sprint planning and capacity modelling. The outcome is consistently faster delivery, measurably higher code quality, reduced operational overhead, and — most importantly — engineering teams that grow stronger with every release.",
       profileImage:
         "data:image/svg+xml,%3Csvg width='400' height='400' viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3ClinearGradient id='grad' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%2364748b;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%23334155;stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='400' height='400' fill='url(%23grad)'/%3E%3Ctext x='200' y='230' font-family='Arial, sans-serif' font-size='120' font-weight='bold' text-anchor='middle' fill='white'%3EDD%3C/text%3E%3C/svg%3E",
     },
-    navigation: ["Home", "About", "Resume", "Services", "Portfolio"],
+    navigation: ["Home", "About", "Resume", "Portfolio", "Blog"],
     socialMedia: [
       {
         name: "LinkedIn",
@@ -37,18 +38,57 @@ const portfolioService = {
         icon: "mail" as const,
       },
     ],
-    skills: [
-      { name: "Engineering Management & Team Leadership", percentage: 95 },
-      { name: "Agile Methodologies", percentage: 90 },
-      { name: "System Architecture", percentage: 90 },
-      { name: "React & Next.js", percentage: 90 },
-      { name: "Node.js & NestJS", percentage: 85 },
-      { name: "Microservices", percentage: 85 },
-      { name: "C# & .NET", percentage: 80 },
-      { name: "Database Management (SQL & NoSQL(MongoDB))", percentage: 80 },
-      { name: "Cloud Technologies (AWS, Azure)", percentage: 70 },
-      { name: "WebRTC & Real-Time Communication", percentage: 75 },
-      { name: "DevOps & CI/CD", percentage: 70 },
+  skills: [
+    // 1. Leadership & Strategic Management (En Kritik: Yönetim Gücü)
+    { name: "Engineering Management", category: "Leadership & Management" },
+    { name: "Mentoring & Coaching", category: "Leadership & Management" },
+    { name: "Agile / Scrum", category: "Leadership & Management" },
+    { name: "Cross-functional Collaboration", category: "Leadership & Management" },
+    { name: "Team Leadership", category: "Leadership & Management" },
+
+    // 2. AI-Augmented Engineering (Fark Yaratan: Modern İş Akışı)
+    { name: "LLM Integration (OpenAI / Claude / Groq)", category: "AI-Augmented Engineering" },
+    { name: "RAG (Retrieval-Augmented Generation)", category: "AI-Augmented Engineering" }, // Eklendi: Kurumsal AI bilgisi
+    { name: "AI-Assisted Code Review", category: "AI-Augmented Engineering" },
+    { name: "Prompt Engineering", category: "AI-Augmented Engineering" },
+    { name: "Claude Code, GitHub Copilot", category: "AI-Augmented Engineering" },
+    { name: "AI-Powered Test Generation", category: "AI-Augmented Engineering" },
+    { name: "AI-Driven Documentation", category: "AI-Augmented Engineering" },
+
+
+     // 4. Backend (Core Competency)
+    { name: "Node.js & NestJS", category: "Backend" },
+    { name: "Go", category: "Backend" },
+    { name: "C# / .NET", category: "Backend" },
+    { name: "GraphQL", category: "Backend" },
+    { name: "WebRTC / Real-Time", category: "Backend" },
+
+    // 5. Frontend (Modern Interface)
+    { name: "Next.js & React", category: "Frontend" },
+    { name: "TypeScript", category: "Frontend" },
+    { name: "Micro Frontend", category: "Frontend" },
+    { name: "Tailwind CSS", category: "Frontend" }, // Eklendi: Modern UI standardı
+    { name: "Playwright / Cypress (E2E Testing)", category: "Frontend" }, // Eklendi: Kalite güvencesi
+    { name: "Progressive Web Apps", category: "Frontend" },
+    { name: "Angular / Vue.js", category: "Frontend" }, // Sona itildi: Alternatif yetkinlik
+
+
+    // 3. Architecture & Infrastructure (Teknik Derinlik: Sistem Tasarımı)
+    { name: "System Design & Scalability", category: "Infrastructure & DevOps" }, // Eklendi: Architect seviyesi
+    { name: "Microservices & Event-Driven Architecture", category: "Infrastructure & DevOps" },
+    { name: "Docker & Kubernetes", category: "Infrastructure & DevOps" },
+    { name: "CI/CD & DevOps Automation", category: "Infrastructure & DevOps" },
+    { name: "AWS / Azure", category: "Infrastructure & DevOps" },
+    { name: "Kafka", category: "Infrastructure & DevOps" },
+    { name: "Observability (Grafana / Prometheus)", category: "Infrastructure & DevOps" }, // Eklendi: Sistem izleme
+
+     // 6. Databases (Persistence)
+    { name: "PostgreSQL", category: "Databases" },
+    { name: "Redis", category: "Databases" },
+    { name: "MongoDB", category: "Databases" },
+    { name: "Elasticsearch", category: "Databases" },
+    { name: "Vector Databases (Pinecone / Milvus)", category: "Databases" }, // Eklendi: AI projeleri için şart
+
     ],
     services: [
       {
@@ -502,6 +542,397 @@ const portfolioService = {
       { number: "50+", label: "Projects Completed" },
       { number: "7+", label: "Team Members Led" },
     ],
+    blogs: ([
+      {
+        id: 1,
+        slug: "have-we-become-slaves-to-ai",
+        title: "Have We Become Slaves to AI?",
+        shortDesc:
+          "AI is transforming how we write software — but are we trading long-term engineering quality for short-term velocity? A candid look at what we're getting wrong, and how to course-correct.",
+        coverImage:
+          (process.env.NEXT_PUBLIC_BASE_PATH || "") +
+          "/img/1770047325042.jpeg",
+        tags: ["AI", "Engineering", "Best Practices"],
+        date: "March 04, 2026",
+        readTime: "9 min",
+        author: "Demir Danış",
+        sections: [
+          {
+            type: "paragraph",
+            content:
+              "AI adoption in software teams has accelerated at a pace few anticipated. When used with intention and discipline, the productivity gains are undeniable — generating code, refactoring, writing tests, producing documentation. Tasks that once consumed hours now take minutes. But alongside this remarkable capability sits a far less discussed downside. And if we're being honest, it's worth a serious conversation.",
+          },
+          {
+            type: "heading",
+            content: "The Core Problem: Moving Without Understanding",
+          },
+          {
+            type: "paragraph",
+            content:
+              "The most fundamental issue with uncritical AI adoption is deceptively simple: we are shipping code we don't fully understand. In the short term, this goes unnoticed. The code compiles. The tests pass — when they exist. The feature is marked done. But look beneath the surface and the picture is far less encouraging.",
+          },
+          {
+            type: "paragraph",
+            content: "AI-generated code tends to be:",
+          },
+          {
+            type: "list",
+            content: [
+              "Fragmented and inconsistent — solving the same problem in multiple ways across the same codebase",
+              "Misaligned with team or company coding standards",
+              "Difficult to maintain and extend over time",
+              "Written for the happy path, with edge cases left as an exercise for production",
+              "Architecturally shallow — optimised for the immediate task, blind to the surrounding system",
+            ],
+          },
+          {
+            type: "heading",
+            content: "\"Works Fine\" — Until It Doesn't",
+          },
+          {
+            type: "paragraph",
+            content:
+              "Perhaps the more insidious risk is that AI-generated code frequently appears to work. Happy-path scenarios pass. Demos go smoothly. Sprints close on time. But production is not a demo. Real systems must handle the full spectrum of conditions:",
+          },
+          {
+            type: "list",
+            content: [
+              "Unexpected or malformed inputs",
+              "Null and undefined states across async boundaries",
+              "Race conditions and concurrency edge cases",
+              "Network failures and partial responses",
+              "State inconsistencies in long-running sessions",
+              "Security edge cases that only appear under adversarial conditions",
+            ],
+          },
+          {
+            type: "paragraph",
+            content:
+              "In a realistic scenario with ten distinct failure paths, a typical AI-generated implementation handles two or three. The rest surface in production — at the worst possible moment. It is worth noting that a significant part of this is a prompting problem. Providing AI with full context, constraints, and edge cases dramatically improves output quality. But that level of specification is itself a time investment, which partly undermines the velocity argument.",
+          },
+          {
+            type: "heading",
+            content: "The Code Review Wake-Up Call",
+          },
+          {
+            type: "paragraph",
+            content:
+              "The consequences become most visible during code review. A question that is now heard regularly across engineering teams: \"Why was this implemented this way?\" The answer, with increasing frequency, is some variation of: \"The AI suggested it.\" This represents a quiet but profound shift. The developer is no longer the author of the code — they are its gatekeeper. And a permissive one at that.",
+          },
+          {
+            type: "paragraph",
+            content:
+              "Engineering, properly understood, is not the act of producing code. It is the act of making deliberate decisions — understanding the trade-offs, evaluating alternatives, and owning the outcome. When AI-generated output is merged without this scrutiny, we are not engineering. We are transcribing.",
+          },
+          {
+            type: "heading",
+            content: "Short-Term Gain, Long-Term Pain",
+          },
+          {
+            type: "paragraph",
+            content:
+              "The five minutes saved by letting AI write a function uncritically are repaid many times over in the weeks and months that follow: through hard-to-read code that slows onboarding, unmaintainable components that resist change, debugging sessions that stretch into days, and bug fixes that introduce new regressions. This is not a new problem in software engineering — it is the classic tension between speed and correctness. What AI does is amplify both the temptation and the cost. Technical debt generated at AI velocity accrues at AI velocity too.",
+          },
+          {
+            type: "heading",
+            content: "What AI Should Actually Be",
+          },
+          {
+            type: "paragraph",
+            content:
+              "AI is a powerful amplifier. Used well, it multiplies the output of a thoughtful engineer. Used poorly, it multiplies the output of careless decisions. The key distinction is positioning: AI as a tool in the engineer's hands, not a replacement for the engineer's judgment.",
+          },
+          {
+            type: "paragraph",
+            content: "AI does certain things exceptionally well:",
+          },
+          {
+            type: "list",
+            content: [
+              "Rapid generation of boilerplate and scaffolding",
+              "Surfacing alternative approaches the engineer can evaluate",
+              "Accelerating documentation and test stubs",
+              "Explaining unfamiliar code or APIs quickly",
+              "Handling well-defined, low-risk tasks at speed",
+            ],
+          },
+          {
+            type: "paragraph",
+            content:
+              "What it cannot do reliably: understand the long-term architectural trajectory of your system, anticipate how today's shortcut will constrain tomorrow's feature, or take ownership when something breaks in production.",
+          },
+          {
+            type: "heading",
+            content: "A More Sustainable Approach",
+          },
+          {
+            type: "paragraph",
+            content:
+              "Rather than handing the keyboard to the model, a more sustainable posture looks like this:",
+          },
+          {
+            type: "list",
+            content: [
+              "Establish and enforce clear coding standards and architectural principles before AI enters the workflow",
+              "Treat AI output with the same scrutiny you would apply to an external PR from an unknown contributor",
+              "Require engineers to be able to explain every line of AI-generated code they merge, as if they wrote it themselves",
+              "Use AI strategically — for acceleration in well-understood domains, not as a substitute for design thinking in complex ones",
+              "Build team habits around prompting with full context: constraints, edge cases, performance requirements, security considerations",
+            ],
+          },
+          {
+            type: "paragraph",
+            content:
+              "Perhaps the most important mindset shift is this: move from \"if the AI wrote it, it must be correct\" to \"if the AI wrote it, I should look more carefully.\"",
+          },
+          {
+            type: "heading",
+            content: "Closing Thoughts",
+          },
+          {
+            type: "paragraph",
+            content:
+              "Velocity matters. Shipping matters. But long-term maintainability and engineering quality — especially in large, complex systems — matter more. AI is leverage. Leverage that is not managed becomes a liability. The engineers and teams who will win in the AI era are not those who use it the most. They are those who use it the most wisely.",
+          },
+          {
+            type: "paragraph",
+            content:
+              "Don't become a servant to the tool. Make the tool serve you.",
+          },
+        ],
+      },
+      {
+        id: 2,
+        slug: "the-kind-of-team-leader-i-am",
+        title: "The Kind of Team Leader I Am",
+        shortDesc:
+          "Effective leadership isn't about having all the answers — it's about asking the right questions. Here's the philosophy that shapes how I lead engineering teams.",
+        coverImage:
+          (process.env.NEXT_PUBLIC_BASE_PATH || "") +
+          "/img/1766170393686.jpeg",
+        tags: ["Leadership", "Engineering Management", "Team Culture"],
+        date: "June 18, 2025",
+        readTime: "7 min",
+        author: "Demir Danış",
+        sections: [
+          {
+            type: "paragraph",
+            content:
+              "One of the things I find myself doing most frequently as a team lead — even when I already have a solution in mind — is bringing the problem to the team. Not to delegate the thinking, but to think together. Because the best engineers aren't just the ones who write clean, correct code. They're the ones who can reason clearly, decompose a problem, offer multiple perspectives, take ownership, and do all of this as part of a team rather than in isolation. Building that culture is one of my core responsibilities as a leader.",
+          },
+          {
+            type: "heading",
+            content: "Don't Give Answers. Teach the Process.",
+          },
+          {
+            type: "paragraph",
+            content:
+              "There's a Confucian principle I keep returning to: \"Give a man a fish and you feed him for a day. Teach a man to fish and you feed him for a lifetime.\" This idea sits at the center of how I approach leadership. When a team member comes to me with a problem, my instinct is never to say \"here's how you fix it.\" Instead, I say: \"Let's look at it together.\" The goal isn't the solution — it's developing the judgment to find solutions independently.",
+          },
+          {
+            type: "heading",
+            content: "Step One: Define the Problem Precisely",
+          },
+          {
+            type: "paragraph",
+            content:
+              "Before any solution can be sound, the problem must be clearly understood. I guide team members through the diagnostic phase with questions designed to sharpen their thinking rather than shortcut it:",
+          },
+          {
+            type: "list",
+            content: [
+              "What changed most recently that could have introduced this problem?",
+              "Is this behaviour appearing in all environments, or only in specific scenarios?",
+              "Can we reliably reproduce the issue?",
+              "Are we observing the actual error, or only a downstream symptom?",
+            ],
+          },
+          {
+            type: "paragraph",
+            content:
+              "These aren't just debugging questions. They're a framework for rigorous thinking — one I want to become second nature for every engineer on the team.",
+          },
+          {
+            type: "heading",
+            content: "Step Two: Decompose Before You Solve",
+          },
+          {
+            type: "paragraph",
+            content:
+              "Once the problem is well-defined, I encourage the team to break it down systematically before jumping to solutions:",
+          },
+          {
+            type: "list",
+            content: [
+              "What are the distinct steps in this flow?",
+              "Which component or service is responsible for each step?",
+              "Which layers can be eliminated as the source?",
+              "What do the logs, metrics, and error outputs actually tell us?",
+            ],
+          },
+          {
+            type: "heading",
+            content: "Step Three: Evaluate Solutions, Don't Just Pick One",
+          },
+          {
+            type: "paragraph",
+            content:
+              "When we reach the solution phase, I resist the pull to give the answer directly. Instead, I push the team to think in trade-offs:",
+          },
+          {
+            type: "list",
+            content: [
+              "Could there be more than one valid solution here?",
+              "Are we choosing something fast and risky, or slow and durable?",
+              "Could this fix introduce a different problem downstream?",
+              "If this issue recurs, how would we catch it earlier?",
+            ],
+          },
+          {
+            type: "paragraph",
+            content:
+              "This phase is where real engineering judgment develops. Anyone can implement a fix. The skill lies in understanding why one approach is better than another in a specific context — and owning that decision.",
+          },
+          {
+            type: "heading",
+            content: "The Compounding Return on Investment",
+          },
+          {
+            type: "paragraph",
+            content:
+              "The time I spend on this process looks like a cost in the short term. It's slower than just giving the answer. But it compounds. Engineers who go through this process repeatedly develop a problem-solving reflex — they start thinking analytically by default, they take ownership of outcomes, and they begin challenging each other the same way I challenged them. The team becomes self-improving.",
+          },
+          {
+            type: "paragraph",
+            content:
+              "The way I think about it: one unit of my time invested today returns ten units of team capacity over time. That's not an abstract idea — I've seen it play out concretely. Engineers who joined as juniors have grown into developers who can reason through and build end-to-end systems entirely independently. That progression is the real measure of a team leader's effectiveness.",
+          },
+          {
+            type: "heading",
+            content: "What I'm Actually Building",
+          },
+          {
+            type: "paragraph",
+            content:
+              "My goal as a leader has never been simply to ship today's work. It's to develop engineers who can make their own decisions, design their own systems, and lead others when the moment calls for it. Every problem we debug together, every architecture discussion we have, every mistake we make and correct as a team — these are the building blocks of that outcome.",
+          },
+          {
+            type: "paragraph",
+            content:
+              "I believe the greatest success a leader can achieve is creating a team that no longer needs them to function at its best. And I'm proud to say that's exactly the kind of team I've been building.",
+          },
+        ],
+      },
+      {
+        id: 3,
+        slug: "should-we-build-microservices",
+        title: "Should We Actually Build Microservices?",
+        shortDesc:
+          "Microservices have become a near-reflex architectural choice. But are we adopting them because they solve our problems — or because everyone else is?",
+        coverImage:
+          (process.env.NEXT_PUBLIC_BASE_PATH || "") +
+          "/img/1766079638702.jpeg",
+        tags: ["Architecture", "Microservices", "Engineering"],
+        date: "April 28, 2025",
+        readTime: "7 min",
+        author: "Demir Danış",
+        sections: [
+          {
+            type: "paragraph",
+            content:
+              "At the start of nearly every new project these days, the same question surfaces almost instinctively: \"Should we build this as microservices?\" The question itself isn't wrong. What's often missing is the follow-up: \"Why? What problem would that actually solve?\" Too frequently, the choice is driven by trend, peer pressure, or a vague sense of obligation rather than a clear engineering rationale.",
+          },
+          {
+            type: "heading",
+            content: "Why Microservices Existed in the First Place",
+          },
+          {
+            type: "paragraph",
+            content:
+              "Microservices emerged as a direct response to real, painful problems that large monolithic systems produce at scale:",
+          },
+          {
+            type: "list",
+            content: [
+              "Deployments in large monoliths became slow, risky, and increasingly difficult to coordinate",
+              "One team's change could silently break another team's production environment",
+              "Scaling a single hot component meant scaling the entire application alongside it",
+            ],
+          },
+          {
+            type: "paragraph",
+            content:
+              "The promise of microservices was specific: independent deployability, team-level ownership with clear service boundaries, and the ability to scale individual components in isolation. The goal was never to decompose for the sake of decomposition. It was to gain autonomy.",
+          },
+          {
+            type: "heading",
+            content: "What We Often Build Instead",
+          },
+          {
+            type: "paragraph",
+            content:
+              "In practice, the picture frequently looks quite different. Consider a scenario that will be familiar to many engineers: a single team maintaining 10 to 15 microservices, with every engineer committing to every service. The services are nominally independent but deployed together as a unit. Kubernetes exists in theory but runs a single instance of each service with no horizontal scaling per service. There is no event-driven communication — services call each other synchronously in chains.",
+          },
+          {
+            type: "paragraph",
+            content:
+              "At this point, it's worth asking honestly: where is the microservices architecture we set out to build? If we weren't going to use independent deployment, team ownership, or elastic scaling — why did we absorb all of the operational overhead that comes with this approach?",
+          },
+          {
+            type: "heading",
+            content: "The Questions We Should Ask First",
+          },
+          {
+            type: "paragraph",
+            content:
+              "Before choosing microservices — or any architectural pattern, technology, or framework — the right discipline is to work through these questions explicitly:",
+          },
+          {
+            type: "list",
+            content: [
+              "What specific problem are we solving with this choice?",
+              "Do we have independent teams who need autonomous deployment pipelines?",
+              "Are there components with genuinely different scaling profiles?",
+              "Do we have the operational maturity to run a distributed system — observability, service discovery, failure handling?",
+              "What is the real cost of this approach versus a simpler alternative?",
+            ],
+          },
+          {
+            type: "paragraph",
+            content:
+              "If the honest answers don't justify the complexity, that's a signal worth taking seriously.",
+          },
+          {
+            type: "heading",
+            content: "The Case for a Well-Designed Monolith",
+          },
+          {
+            type: "paragraph",
+            content:
+              "A well-structured monolith with clear domain boundaries will, in many contexts, outperform a poorly conceived microservices architecture on every dimension that matters: development velocity, operational simplicity, debuggability, and long-term maintainability. Microservices chosen at the wrong moment and for the wrong reasons don't reduce complexity — they redistribute it into the infrastructure, into inter-service contracts, and into the cognitive load of every engineer on the team.",
+          },
+          {
+            type: "paragraph",
+            content:
+              "This isn't an argument against microservices. Engineers working in this space should understand them deeply — both the theory and the practice. At the right scale and organisational maturity, microservices deliver exactly what they promise. The point is that the pattern must be earned by the problem, not assumed by default.",
+          },
+          {
+            type: "heading",
+            content: "Engineering Is Optimisation Under Constraints",
+          },
+          {
+            type: "paragraph",
+            content:
+              "Engineering is the discipline of solving problems with the resources available — no more, no less. A solution that introduces unnecessary complexity isn't clever; it's a liability. Sometimes the most sophisticated thing an engineering team can do is choose the simpler path deliberately, with a clear understanding of what they're trading off and why.",
+          },
+          {
+            type: "paragraph",
+            content:
+              "What we often need isn't more services. It's clearer boundaries, better-defined domains, and the discipline to resist complexity for its own sake.",
+          },
+        ],
+      },
+    ] as BlogPost[]),
   }),
 };
 
