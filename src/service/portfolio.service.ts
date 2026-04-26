@@ -958,8 +958,8 @@ const portfolioService = {
       },
       {
         id: 4,
-        slug: "integrity-and-ai-driven-recruitment",
-        title: "Through the Eyes of a Team Lead: Integrity and AI-Driven Recruitment in the Modern Software World",
+        slug: "respectful-and-results-oriented-interview-process",
+        title: "Through the Eyes of a Team Lead: A Respectful and Results-Oriented Interview Process",
         shortDesc:
           "Hiring processes stuck in the early 2000s, meaningless case studies, and AI as a litmus test for seniority — a candid take on what modern recruitment should actually look like.",
         coverImage:
