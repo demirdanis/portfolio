@@ -956,6 +956,57 @@ const portfolioService = {
           },
         ],
       },
+      {
+        id: 4,
+        slug: "through-the-eyes-of-a-team-lead",
+        title: "Through the Eyes of a Team Lead: Integrity and AI-Driven Recruitment in the Modern Software World",
+        shortDesc:
+          "Hiring processes stuck in the early 2000s, meaningless case studies, and AI as a litmus test for seniority — a candid take on what modern recruitment should actually look like.",
+        coverImage:
+          (process.env.NEXT_PUBLIC_BASE_PATH || "") +
+          "/img/mulakat.webp",
+        tags: ["Leadership", "Recruitment", "AI", "Engineering Management"],
+        date: "April 26, 2026",
+        readTime: "7 min",
+        author: "Demir Danış",
+        sections: [
+          {
+            type: "paragraph",
+            content:
+              "Roles in the software world are changing, technologies are evolving every day; however, our hiring processes are unfortunately still stuck in the early 2000s, filled with \"brain teasers\" or exploitative \"one-week case studies.\" These meaningless processes, presented under the name of \"screening stages\" by companies that seem to be looking not for a teammate but for a modern-day slave, continue to exhaust the industry. As a Software Team Lead, when I look for a new teammate, I am not just searching for someone who writes good code; I am looking for individuals with whom I can share a culture and vision, and who can provide real value both to the team and the company.",
+          },
+          {
+            type: "paragraph",
+            content:
+              "So, how does an interview process that passes through my filter work? From technical details to character analysis, the human-centered and result-oriented methods I apply are actually based on a single question: \"Is this person a good fit for our team?\" Regardless of whether they are Junior, Mid-Level, or Senior, the first thing I look at is the candidate's character; are they open to sharing, do they enjoy learning and teaching, are they persistent and disciplined? Since methods are constantly changing today, adaptability has even surpassed technical knowledge.",
+          },
+          {
+            type: "paragraph",
+            content:
+              "Especially for Junior candidates with limited experience, a GitHub profile is the biggest showcase that can set them apart. While reviewing their projects, I look not only at whether the code works, but also at code quality, readability, and how well fundamental software principles (best practices) are applied. Recently, one of my biggest criteria has been AI usage. Using AI is a major advantage in my eyes; in fact, if the candidate includes the documentation and prompts they used in the process within the project, it helps me understand how they manage this technology. The critical point here is this: Are they letting AI do all the work, or are they managing it like an \"architect\"? Did they create an ERD diagram before starting to code, did they document the workflow? Did they progress by guiding AI properly, or did they just \"copy-paste\"? Once you examine the code a bit, it becomes quite easy to understand this.",
+          },
+          {
+            type: "paragraph",
+            content:
+              "When it comes to case studies; if there are too many applicants, a case study may be necessary to measure technical level, but my red line here has always been \"time.\" It should not be forgotten that a job seeker applies to many places and their time is valuable. If the candidate is experienced, I always prefer a conversational technical interview instead of a case stage. When a case study is unavoidable, I prepare scenarios that can be completed within a maximum of 2–3 hours, appearing simple but containing \"subtle details.\" I evaluate whether the candidate uses the right approach in these details, whether they engage in over-engineering, and their problem-solving mindset. Like many companies do, I absolutely do not find those week-long processes—essentially outsourcing internal work for free—appropriate.",
+          },
+          {
+            type: "paragraph",
+            content:
+              "I see technical interviews not as an exam, but as a collaboration session. Turning the interview from a cold interrogation room atmosphere into a 15-minute coffee conversation allows me to see the candidate's true potential. Do they seek support from me while solving a technical problem, do they exchange ideas? A character who is not afraid to say \"I don't know,\" is open to learning, collaborative, and disciplined will always take priority over someone who writes very good code but is closed off. For Senior and Mid-Level candidates, we focus on visionary topics. By allowing them to guide the conversation, we talk about what they would want to build if circumstances were different, and I observe their leadership qualities within this natural flow.",
+          },
+          {
+            type: "paragraph",
+            content:
+              "Finally, speed is everything in modern software processes, but one should not get lost within that speed. Listening to how a candidate integrates AI into their processes and whether they can turn this technology into an advantage is one of the greatest indicators of seniority today. Unfortunately, 90% of the industry is still wasting time with meaningless brain teasers and demotivating candidates with fake job postings created just to give the impression of \"we are growing.\" This disrespectful approach, which forgets that candidates also have the right to choose a job, causes companies to lose their future talent.",
+          },
+          {
+            type: "paragraph",
+            content:
+              "In conclusion; technical skills improve over time, and gaps can somehow be filled. Because I and my team are always ready to provide this support to everyone who joins us. However, character, perseverance, and discipline cannot be bought. Instead of highly skilled but \"solo\" players who do not contribute to the team, building a collaborative, \"good human\"-focused team with whom we can find the right path together has always been my priority.",
+          },
+        ],
+      },
     ] as BlogPost[]),
   }),
 };

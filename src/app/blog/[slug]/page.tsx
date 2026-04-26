@@ -104,11 +104,11 @@ export default async function BlogDetailPage({ params }: Props) {
 
       {/* Hero cover */}
       <div className="pt-20">
-        <div className="w-full max-w-[768px] mx-auto h-72 md:h-96 overflow-hidden">
+        <div className="w-full max-w-[768px] mx-auto overflow-hidden">
           <img
             src={blog.coverImage}
             alt={blog.title}
-            className="w-full h-full object-cover"
+            className="w-full h-auto"
           />
         </div>
       </div>
