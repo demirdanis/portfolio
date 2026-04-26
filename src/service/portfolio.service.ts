@@ -964,7 +964,7 @@ const portfolioService = {
           "Hiring processes stuck in the early 2000s, meaningless case studies, and AI as a litmus test for seniority — a candid take on what modern recruitment should actually look like.",
         coverImage:
           (process.env.NEXT_PUBLIC_BASE_PATH || "") +
-          "/img/mulakat.webp",
+          "/img/interview.webp",
         tags: ["Leadership", "Recruitment", "AI", "Engineering Management"],
         date: "April 26, 2026",
         readTime: "7 min",
