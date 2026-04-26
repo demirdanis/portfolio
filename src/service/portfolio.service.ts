@@ -958,7 +958,7 @@ const portfolioService = {
       },
       {
         id: 4,
-        slug: "through-the-eyes-of-a-team-lead",
+        slug: "integrity-and-ai-driven-recruitment",
         title: "Through the Eyes of a Team Lead: Integrity and AI-Driven Recruitment in the Modern Software World",
         shortDesc:
           "Hiring processes stuck in the early 2000s, meaningless case studies, and AI as a litmus test for seniority — a candid take on what modern recruitment should actually look like.",
