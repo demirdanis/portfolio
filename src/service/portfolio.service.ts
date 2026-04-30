@@ -1007,7 +1007,91 @@ const portfolioService = {
           },
         ],
       },
-    ] as BlogPost[]),
+      {
+        id: 5,
+        slug: "where-are-the-programmers-of-the-past",
+        title: "Where Are the Programmers of the Past?",
+        shortDesc:
+          "A nostalgic reflection on the early days of programming — when breaking a system meant learning something new, and solving a problem was a journey worth taking.",
+        coverImage:
+          (process.env.NEXT_PUBLIC_BASE_PATH || "") + "/img/old.webp",
+        tags: ["AI", "Learning", "Nostalgia", "Reflection"],
+        date: "April 30, 2026",
+        readTime: "6 min",
+        author: "Demir Danış",
+        sections: [
+          {
+            type: "paragraph",
+            content:
+              "I remember the years when I first started studying computer engineering. The days we would sit on the grass at the university for hours, discussing a single problem… We would talk about how an algorithm could be written better, how it could run faster. Ideas would fly in the air, discussions would stretch on, sometimes for days. Then we would sit in front of the computer, try over and over again, fail, fix it, and eventually reach a solution.",
+          },
+          {
+            type: "paragraph",
+            content:
+              "The essence of that process was not just \"solving.\" It was learning. It was understanding. And most importantly, it was enjoying it.",
+          },
+          {
+            type: "paragraph",
+            content:
+              "Today, however, the picture looks quite different. Instead of spending hours solving a problem, we often ask an AI tool how to do it. What we get back is not just ideas, but directly applicable solutions. Most of the time, we are simply presented with \"it's already been done.\" This increases efficiency, yes. But at the same time, it dulls curiosity, the desire to explore, and the habit of deep thinking.",
+          },
+          {
+            type: "paragraph",
+            content:
+              "In the past, solving a problem was a journey. Now, it is often just a few sentences typed into a prompt.",
+          },
+          {
+            type: "paragraph",
+            content:
+              "When I think back to my childhood, the difference becomes even clearer. Instead of a circumcision celebration, I had asked my father for a computer. Back then, all I had was MS-DOS. A black screen, white text… Trying things out in the command line, learning commands from books and experimenting with them… I would often break the system. But every time I broke it, I learned a little more.",
+          },
+          {
+            type: "paragraph",
+            content:
+              "Learning by breaking things, enjoying the process of learning… That was the most valuable part of those days.",
+          },
+          {
+            type: "paragraph",
+            content:
+              "Today, even the act of learning itself is being questioned. The idea of \"Why should I learn it when tools can do it for me?\" is becoming more widespread. The culture of fast production and fast consumption devalues depth, focus, and patience. Spending a long time thinking about a problem is almost seen as inefficiency.",
+          },
+          {
+            type: "paragraph",
+            content:
+              "This transformation affects not only the software world but also the way we think. Most likely, a small portion of people will continue to work on more complex problems using advanced technologies. But for the majority, the process of creation will become increasingly superficial.",
+          },
+          {
+            type: "heading",
+            content: "So, is this a bad thing?",
+          },
+          {
+            type: "paragraph",
+            content:
+              "It's hard to give a definitive answer. Technology has always made things easier. But for the first time, it carries the potential to make the learning process itself unnecessary. And that's where the real risk begins.",
+          },
+          {
+            type: "paragraph",
+            content:
+              "Perhaps the real question is not whether to use AI or not, but how we use it. If we use it only to get results, over time our ability to think may weaken. But if we treat it as a tool and continue to seek understanding and learning, maybe we can rediscover that old curiosity in a different form.",
+          },
+          {
+            type: "paragraph",
+            content:
+              "Still, sometimes a thought crosses the mind:",
+          },
+          {
+            type: "paragraph",
+            content:
+              "Is it time to move to a small seaside town and take up fishing?",
+          },
+          {
+            type: "paragraph",
+            content:
+              "Maybe this is not an escape, but simply a longing for simplicity.",
+          },
+        ],
+      },
+    ] as BlogPost[]).sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()),
   }),
 };
 
