@@ -1091,6 +1091,208 @@ const portfolioService = {
           },
         ],
       },
+      {
+        id: 6,
+        slug: "tdd-test-driven-development-or-trouble-driven-development",
+        title: "TDD: Test Driven Development or Trouble Driven Development?",
+        shortDesc:
+          "TDD can be one of the most effective ways to build safe, maintainable systems, but used dogmatically it can also become friction. The real question is not whether TDD is good or bad, but whether it fits the context.",
+        coverImage:
+          (process.env.NEXT_PUBLIC_BASE_PATH || "") + "/img/tdd.webp",
+        tags: ["TDD", "Testing", "Engineering", "Frontend"],
+        date: "May 07, 2026",
+        readTime: "6 min",
+        author: "Demir Danış",
+        sections: [
+          {
+            type: "paragraph",
+            content:
+              "In software development, there are certain topics that naturally split people into two camps. TDD (Test Driven Development) is definitely one of them.",
+          },
+          {
+            type: "paragraph",
+            content:
+              "For some, it is the foundation of disciplined engineering. Writing code without tests almost feels irresponsible. For others, especially in today's fast-paced product environments, it can feel like unnecessary overhead that slows everything down.",
+          },
+          {
+            type: "paragraph",
+            content:
+              "Honestly, both perspectives make sense depending on the context.",
+          },
+          {
+            type: "paragraph",
+            content:
+              "Because TDD itself is not a bad approach. In fact, when used in the right place, it is extremely powerful. The problem starts when it is treated as a universal rule instead of a tool.",
+          },
+          {
+            type: "heading",
+            content: "What TDD Actually Promises",
+          },
+          {
+            type: "paragraph",
+            content:
+              "At its core, TDD is simple. You write the test first, then implement the code to pass that test. In other words, before writing the actual implementation, you define how the system should behave.",
+          },
+          {
+            type: "paragraph",
+            content: "On paper, this is very logical.",
+          },
+          {
+            type: "paragraph",
+            content:
+              "Especially in large-scale systems, this mindset can be incredibly valuable. At some point in a project, you stop focusing on writing new features and start focusing on not breaking existing ones.",
+          },
+          {
+            type: "paragraph",
+            content:
+              "You eventually reach that familiar feeling: \"If I touch this, what else is going to break?\"",
+          },
+          {
+            type: "paragraph",
+            content:
+              "Well-written tests act like a safety net in those situations. Particularly in areas like:",
+          },
+          {
+            type: "list",
+            content: [
+              "Payment systems",
+              "Authentication flows",
+              "Critical business logic",
+              "Complex data transformations",
+            ],
+          },
+          {
+            type: "paragraph",
+            content:
+              "In those domains, a bug is not just a technical issue - it can directly impact users, money, or trust.",
+          },
+          {
+            type: "paragraph",
+            content:
+              "Another underrated benefit of TDD is how it shapes your code. When you try to make your code testable, you naturally end up with better structure. Smaller functions, fewer dependencies, clearer responsibilities.",
+          },
+          {
+            type: "paragraph",
+            content:
+              "So sometimes, the real value of TDD is not the tests themselves, but the design habits it forces you into.",
+          },
+          {
+            type: "heading",
+            content: "When TDD Turns Into Ritual",
+          },
+          {
+            type: "paragraph",
+            content:
+              "But there is another side to this story.",
+          },
+          {
+            type: "paragraph",
+            content:
+              "In many teams today, TDD slowly turns into a ritual rather than a tool. It is no longer used because it is needed, but because it is considered \"the correct way to do things\".",
+          },
+          {
+            type: "paragraph",
+            content:
+              "And that is where it starts to become a problem.",
+          },
+          {
+            type: "paragraph",
+            content:
+              "Imagine a startup environment where things change rapidly. Features evolve weekly, sometimes even daily. Something you build today might be completely removed tomorrow.",
+          },
+          {
+            type: "paragraph",
+            content:
+              "In that kind of environment, writing tests for every small behavior can easily slow the team down.",
+          },
+          {
+            type: "paragraph",
+            content:
+              "Especially on the frontend side, I have seen this happen often. Some tests become so tightly coupled to implementation details that even a small UI change breaks everything.",
+          },
+          {
+            type: "paragraph",
+            content:
+              "Then the team spends more time fixing tests than actually building the product.",
+          },
+          {
+            type: "paragraph",
+            content:
+              "And over time, something worse happens: people stop trusting the tests.",
+          },
+          {
+            type: "paragraph",
+            content:
+              "Instead of protecting the system, tests become something you \"update just to make CI green\".",
+          },
+          {
+            type: "paragraph",
+            content:
+              "This is where TDD starts to feel less like a safety mechanism and more like a burden.",
+          },
+          {
+            type: "heading",
+            content: "Context Is the Whole Point",
+          },
+          {
+            type: "paragraph",
+            content:
+              "The key point, in my opinion, is this: you do not need to test everything. You need to protect what actually matters.",
+          },
+          {
+            type: "paragraph",
+            content: "Not every project is enterprise-level. Sometimes you're building:",
+          },
+          {
+            type: "list",
+            content: [
+              "A small admin panel",
+              "A landing page",
+              "An MVP",
+              "A short-lived internal tool",
+            ],
+          },
+          {
+            type: "paragraph",
+            content:
+              "In those cases, heavy testing strategies can easily become unnecessary overhead.",
+          },
+          {
+            type: "paragraph",
+            content:
+              "But on the other hand, if you are building a long-lived system with multiple teams, frequent refactoring, and complex business rules, then a strong testing culture becomes incredibly valuable.",
+          },
+          {
+            type: "paragraph",
+            content:
+              "So the real question is not whether TDD is good or bad.",
+          },
+          {
+            type: "paragraph",
+            content:
+              "The real question is: is it appropriate for this context?",
+          },
+          {
+            type: "heading",
+            content: "Good Engineering Avoids Extremes",
+          },
+          {
+            type: "paragraph",
+            content:
+              "Good engineering is rarely about extremes. Blindly testing everything is just as wrong as not testing at all.",
+          },
+          {
+            type: "paragraph",
+            content:
+              "Used correctly, TDD gives you confidence and speed. Used dogmatically, it turns into bureaucracy.",
+          },
+          {
+            type: "paragraph",
+            content:
+              "And sometimes, good engineering is not just knowing how to write tests - but knowing when not to.",
+          },
+        ],
+      },
     ] as BlogPost[]).sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()),
   }),
 };
