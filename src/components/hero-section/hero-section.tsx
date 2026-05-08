@@ -67,7 +67,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
             <a
               href={
                 (process.env.NEXT_PUBLIC_BASE_PATH || "") +
-                "/img/DemirCV202506.pdf"
+                "/img/Demir_Danis_CV_EN_2026_05_05.pdf"
               }
               download
               target="_blank"
