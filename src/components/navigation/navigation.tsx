@@ -60,12 +60,7 @@ const Navigation: React.FC<NavigationProps> = ({
           ))}
         </div>
         {/* Mobile menu button */}
-        <button
-          className="lg:hidden p-2 text-gray-300 hover:text-white"
-          onClick={() => setIsMenuOpen(!isMenuOpen)}
-        >
-          {isMenuOpen ? <span>X</span> : <span>≡</span>}
-        </button>
+        
       </div>
       {/* Mobile Navigation */}
       {isMenuOpen && (

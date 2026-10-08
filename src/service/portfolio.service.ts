@@ -1293,6 +1293,69 @@ const portfolioService = {
           },
         ],
       },
+      {
+        id: 7,
+        slug: "be-the-chef-of-your-own-life-the-fallacy-of-the-four-burners-theory",
+        title: "Be the Chef of Your Own Life — The Fallacy of the Four Burners Theory",
+        shortDesc: "There is a very famous, and somewhat ruthless, 'Four Burners Theory' in the world of time management. It asks you to imagine your life as a four-burner stove representing family, friends, health, and work. The rule is: to be successful, you must turn one burner off; to be at the very top, you must sacrifice two.",
+        coverImage:
+          (process.env.NEXT_PUBLIC_BASE_PATH || "") +
+          "/img/forburners.webp",
+        tags: ["Life", "Balance", "Success", "Productivity"],
+        date: "October 10, 2026",
+        readTime: "5 min",
+        author: "Demir Danış",
+        sections: [
+          {
+            type: "paragraph",
+            content: "There is a very famous, and somewhat ruthless, 'Four Burners Theory' in the world of time management and productivity. It asks you to imagine your life as a four-burner stove. The first burner represents your family, the second your friends, the third your health, and the fourth your work. The cold, uncompromising rule of the theory is this: **If you want to be successful, you have to turn one of these burners off completely. If you want to be at the very top of your field, you have to sacrifice two.** Because, according to the theory, there simply isn't enough gas to keep all four burners going.",
+          },
+          {
+            type: "paragraph",
+            content: "That is exactly the kind of success the internet world, with its never-ending 'hustle' culture, has been selling us for years. Turn the career burner all the way up, let the flames reach the ceiling; meanwhile, let your health fade away from lack of sleep and allow distance to grow between you and the people you love. Missing out on the rest of your life just for a bigger title, a fatter paycheck, or a career that looks impressive enough to showcase on social media… This so-called 'successful person' profile that is constantly pushed in our faces is actually nothing more than someone who has become a slave to their own life.",
+          },
+          {
+            type: "paragraph",
+            content: "As a software architect, after spending years losing myself in front of a computer, writing code for hours on end, I can see much more clearly how dangerous this illusion really is. If I put work, architecture, and those endless meetings at the very center of my life and cut the gas to the other burners, what is left? If I spend my days buried inside those screens chasing 'success,' while missing out on life, wouldn't I also be turning down—or even completely shutting off—the burner that fuels those short but priceless moments I get to spend with my little daughter in the evenings?",
+          },
+          {
+            type: "heading",
+            content: "Real Success Is Balance, Not Sacrifice",
+          },
+          {
+            type: "paragraph",
+            content: "Real success is not something that can be defined solely by a career, as we have been taught to believe. True success is being able to step away from the stove and get back into life. The person who can keep all four burners lit, who knows how to enjoy all of them without becoming a slave to any single one, is the person who is truly at the top.",
+          },
+          {
+            type: "paragraph",
+            content: "Success is building a career, even if it is a small one, while still being able to cook something healthy at home in the evening—for example, preparing a beautiful salmon in that ceramic pan you love and spending time with your family. It is sweating through resistance training to build muscle and showing respect for your own body. It is having coffee with your friends and laughing together. It is finding time on the weekend to clear your mind with small side projects, perhaps even developing a mobile game. **Living like a human being and being free are hidden precisely within this balance.**",
+          },
+          {
+            type: "heading",
+            content: "Life Has Rhythms, Not Absolutes",
+          },
+          {
+            type: "paragraph",
+            content: "Of course, this does not mean that all four burners will burn at exactly the same intensity throughout your entire life. Life has a rhythm, and these fluctuations are perfectly natural. Sometimes, during the delivery week of a major project at work, you turn the work burner up a couple of notches; during that period, you might turn the friends burner down a little. Sometimes, you need to focus on your health and increase the intensity of your workouts; during that period, you might put your career ambitions into idle mode. What matters is not tearing one burner out of the stove just because you want to turn another one up.",
+          },
+          {
+            type: "paragraph",
+            content: "Our time is limited, and we did not come into this life simply to become a good resource for a company or to keep the wheels of a system turning. A life fueled by all those small moments that make you happy and make life worth living is the greatest form of wealth. Hugging your family, sharing your troubles with friends, sweating for your own health, and creating through work where you can express your talents…",
+          },
+          {
+            type: "heading",
+            content: "Become the True Winner of Your Own Life",
+          },
+          {
+            type: "paragraph",
+            content: "**If you can cook something beautiful on all of these burners at the same time, you have already shattered the false myth of success that was imposed upon you. You have become the true winner of your own life.**",
+          },
+          {
+            type: "paragraph",
+            content: "**Be the chef of your own life. Use all four burners.**",
+          },
+        ],
+      },
     ] as BlogPost[]).sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()),
   }),
 };
